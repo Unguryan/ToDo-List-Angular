@@ -11,6 +11,14 @@
 
         public ItemState State { get; set; }
 
-        public List<ItemComposite> SubItems { get; set; }
+        public User CreatedBy { get; set; }
+
+        public User? AssignedTo { get; set; }
+
+        public Board Board { get; set; }
+
+        public ItemComposite? ParentItem { get; set; }
+
+        public List<ItemComposite>? SubItems { get; set; }
     }
 }
