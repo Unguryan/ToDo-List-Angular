@@ -2,6 +2,6 @@
 {
     public interface INotifyUserService
     {
-        Task<NotifyUserCommandResult> NotifyUser(NotifyUserCommand request);
+        Task<NotifyUserCommandResult> NotifyUserAsync(NotifyUserCommand request);
     }
 }
