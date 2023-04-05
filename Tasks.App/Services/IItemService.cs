@@ -1,6 +1,17 @@
-﻿namespace Tasks.App.Services
+﻿using Tasks.App.CQRS.Commands.Item.Change.AddSubItem;
+using Tasks.App.CQRS.Commands.Item.Change.ChangeItemAssignedTo;
+using Tasks.App.CQRS.Commands.Item.Change.ChangeItemDescription;
+using Tasks.App.CQRS.Commands.Item.Change.ChangeItemName;
+using Tasks.App.CQRS.Commands.Item.Change.ChangeItemParentItem;
+using Tasks.App.CQRS.Commands.Item.Change.ChangeItemState;
+using Tasks.App.CQRS.Commands.Item.Change.RemoveSubItem;
+using Tasks.App.CQRS.Commands.Item.CreateItem;
+using Tasks.App.CQRS.Commands.Item.RemoveItem;
+using Tasks.App.CQRS.Queries.Item.GetItem;
+
+namespace Tasks.App.Services
 {
-    public interface IItemService
+    public interface IItemService 
     {
         Task<GetItemQueryResult> GetItemAsync(GetItemQuery query);
 
@@ -22,7 +33,7 @@
 
         Task<AddSubItemCommandResult> AddSubItemAsync(AddSubItemCommand request);
 
-        Task<RemoveSubItemResult> RemoveSubItemAsync(RemoveSubItemCommand request);
+        Task<RemoveSubItemCommandResult> RemoveSubItemAsync(RemoveSubItemCommand request);
         
         #endregion
 

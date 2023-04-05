@@ -1,4 +1,12 @@
-﻿namespace Tasks.App.Services
+﻿using Tasks.App.CQRS.Commands.Board.AddUserToBoard;
+using Tasks.App.CQRS.Commands.Board.ChangeBoardName;
+using Tasks.App.CQRS.Commands.Board.CreateBoard;
+using Tasks.App.CQRS.Commands.Board.RemoveBoard;
+using Tasks.App.CQRS.Commands.Board.RemoveUserFromBoard;
+using Tasks.App.CQRS.Queries.Board.GetUserBoardById;
+using Tasks.App.CQRS.Queries.Board.GetUserBoards;
+
+namespace Tasks.App.Services
 {
     public interface IBoardService
     {

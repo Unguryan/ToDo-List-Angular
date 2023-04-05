@@ -1,4 +1,6 @@
-﻿namespace Tasks.App.Services
+﻿using Tasks.App.CQRS.Commands.Token.GenerateToken;
+
+namespace Tasks.App.Services
 {
     public interface IJWTTokenGenerator
     {

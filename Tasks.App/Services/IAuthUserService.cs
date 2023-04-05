@@ -1,4 +1,7 @@
-﻿namespace Tasks.App.Services
+﻿using Tasks.App.CQRS.Commands.User.Login;
+using Tasks.App.CQRS.Commands.User.Logout;
+
+namespace Tasks.App.Services
 {
     public interface IAuthUserService
     {

@@ -1,4 +1,9 @@
-﻿namespace Tasks.App.Services
+﻿using Tasks.App.CQRS.Commands.Token.AddToken;
+using Tasks.App.CQRS.Commands.Token.RemoveToken;
+using Tasks.App.CQRS.Queries.Token.GetActiveUserToken;
+using Tasks.App.CQRS.Queries.Token.ReadToken;
+
+namespace Tasks.App.Services
 {
     public interface IJWTTokenService
     {
