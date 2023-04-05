@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Board.ChangeBoardName
     {
         public async Task<ChangeBoardNameCommandResult> Handle(ChangeBoardNameCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

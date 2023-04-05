@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.User.RemoveUser
     {
         public async Task<RemoveUserCommandResult> Handle(RemoveUserCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

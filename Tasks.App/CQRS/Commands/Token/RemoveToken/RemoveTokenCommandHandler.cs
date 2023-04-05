@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Token.RemoveToken
     {
         public async Task<RemoveTokenCommandResult> Handle(RemoveTokenCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

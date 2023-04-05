@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Item.CreateItem
     {
         public async Task<CreateItemCommandResult> Handle(CreateItemCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

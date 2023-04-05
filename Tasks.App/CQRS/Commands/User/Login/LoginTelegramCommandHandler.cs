@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.User.Login
     {
         public async Task<LoginCommandResult> Handle(LoginTelegramCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

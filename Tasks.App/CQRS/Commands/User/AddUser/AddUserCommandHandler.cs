@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.User.AddUser
     {
         public async Task<AddUserCommandResult> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Board.RemoveUserFromBoard
     {
         public async Task<RemoveUserFromBoardCommandResult> Handle(RemoveUserFromBoardCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

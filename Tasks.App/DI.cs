@@ -11,7 +11,6 @@ namespace Tasks.App
             var assebmly = Assembly.GetExecutingAssembly();
 
             services.AddMediatR(assebmly);
-            services.AddAutoMapper(assebmly);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Token.GenerateToken
     {
         public async Task<GenerateTokenCommandResult> Handle(GenerateTokenCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

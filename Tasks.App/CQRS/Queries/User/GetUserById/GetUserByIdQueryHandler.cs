@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Queries.User.GetUserById
     {
         public async Task<GetUserByIdQueryResult> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

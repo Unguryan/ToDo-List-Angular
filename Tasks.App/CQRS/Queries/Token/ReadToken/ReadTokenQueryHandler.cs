@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Queries.Token.ReadToken
     {
         public async Task<ReadTokenQueryResult> Handle(ReadTokenQuery request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

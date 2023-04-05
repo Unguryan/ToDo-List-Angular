@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Queries.Token.GetActiveUserToken
     {
         public async Task<GetActiveUserTokenQueryResult> Handle(GetActiveUserTokenQuery request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

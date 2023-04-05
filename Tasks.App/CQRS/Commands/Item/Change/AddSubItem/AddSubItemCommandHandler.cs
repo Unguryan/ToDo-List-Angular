@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Item.Change.AddSubItem
     {
         public async Task<AddSubItemCommandResult> Handle(AddSubItemCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

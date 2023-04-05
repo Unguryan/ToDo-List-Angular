@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Item.Change.ChangeItemParentItem
     {
         public async Task<ChangeItemParentItemCommandResult> Handle(ChangeItemParentItemCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

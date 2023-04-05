@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Queries.Board.GetUserBoards
     {
         public async Task<GetUserBoardsQueryResult> Handle(GetUserBoardsQuery request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

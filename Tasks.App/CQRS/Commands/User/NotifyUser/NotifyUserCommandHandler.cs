@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.User.NotifyUser
     {
         public async Task<NotifyUserCommandResult> Handle(NotifyUserCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

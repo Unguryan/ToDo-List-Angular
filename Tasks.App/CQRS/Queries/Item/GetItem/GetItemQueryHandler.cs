@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Queries.Item.GetItem
     {
         public async Task<GetItemQueryResult> Handle(GetItemQuery request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }

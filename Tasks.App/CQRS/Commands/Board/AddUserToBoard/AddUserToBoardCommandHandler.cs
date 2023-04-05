@@ -6,7 +6,7 @@ namespace Tasks.App.CQRS.Commands.Board.AddUserToBoard
     {
         public async Task<AddUserToBoardCommandResult> Handle(AddUserToBoardCommand request, CancellationToken cancellationToken)
         {
-
+            throw new Exception();
         }
     }
 }
