@@ -1,0 +1,29 @@
+<div *ngIf="!user">
+    <div class="d-inline-flex">
+        <!-- <p-button class="me-3" styleClass="p-button-secondary p-button-sm" routerLink="/login">
+            <div class="d-inline-flex">
+                <span class="me-1">Login</span> 
+            </div>
+        </p-button> -->
+
+        <a class="navbar-text btn btn-outline-light" routerLink="/login">Login</a>
+       
+    </div>
+</div>
+
+<div *ngIf="user">
+    <div class="d-inline-flex">
+        <a class="navbar-brand navbar-brand-text " routerLink="/my">{{user.name}}</a>
+
+
+    <button pButton class="btn btn-outline-secondary p-button-secondary" [loading]="loading" (click)="LogOut()">
+            <span class="ms-1">Log Out</span> 
+    </button>
+
+        <!-- <p-button class="me-3" styleClass="p-button-secondary" [loading]="loading" (click)="LogOut()">
+            <div class="d-inline-flex">
+                <span class="me-1">Log Out</span> 
+            </div>
+        </p-button> -->
+    </div>
+</div>

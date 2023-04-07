@@ -1,9 +1,9 @@
-﻿using Tasks.App.CQRS.Commands.Token.GenerateToken;
+﻿using Tasks.Domain.Models;
 
 namespace Tasks.App.Services
 {
     public interface IJWTTokenGenerator
     {
-        Task<GenerateTokenCommandResult> GenerateTokenAsync(GenerateTokenCommand request);
+        Task<string> GenerateTokenAsync(User user);
     }
 }

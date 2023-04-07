@@ -1,4 +1,4 @@
-﻿using Tasks.App.CQRS.Commands.User.NotifyUser;
+﻿using Tasks.App.CQRS.Commands.Users.NotifyUser;
 using Tasks.App.Services;
 
 namespace Tasks.Infrastructure.Services

@@ -26,13 +26,54 @@ namespace Tasks.EF_Core.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<UserDbo>().ToTable("Users");
-            //modelBuilder.Entity<TokenDbo>().ToTable("Tokens");
+            modelBuilder.Entity<BoardDbo>().ToTable("Boards");
+            modelBuilder.Entity<ItemDbo>().ToTable("Items");
+            modelBuilder.Entity<TokenDbo>().ToTable("Tokens");
+            modelBuilder.Entity<UserDbo>().ToTable("Users");
 
-            //modelBuilder.Entity<TokenDbo>()
-            //            .HasOne(x => x.UserData)
-            //            .WithOne()
-            //            .HasForeignKey<TokenDbo>(x => x.UserId);
+            modelBuilder.Entity<TokenDbo>()
+                        .HasOne(x => x.User)
+                        .WithOne()
+                        .HasForeignKey<TokenDbo>(x => x.UserId);
+
+
+            modelBuilder.Entity<ItemDbo>()
+                        .HasOne(x => x.CreatedBy)
+                        .WithOne()
+                        .HasForeignKey<ItemDbo>(x => x.CreatedById);
+
+            modelBuilder.Entity<ItemDbo>()
+                        .HasOne(x => x.AssignedTo)
+                        .WithOne()
+                        .HasForeignKey<ItemDbo>(x => x.AssignedToId);
+
+            modelBuilder.Entity<ItemDbo>()
+                        .HasOne(x => x.Board)
+                        .WithMany(x => x.Items)
+                        .HasForeignKey(x => x.BoardId);
+
+            modelBuilder.Entity<ItemDbo>()
+                        .HasOne(x => x.ParentItem)
+                        .WithOne()
+                        .HasForeignKey<ItemDbo>(x => x.ParentItemId);
+
+            modelBuilder.Entity<ItemDbo>()
+                        .HasMany(x => x.SubItems)
+                        .WithOne();
+
+
+            modelBuilder.Entity<BoardDbo>()
+                        .HasOne(x => x.Owner)
+                        .WithOne()
+                        .HasForeignKey<BoardDbo>(x => x.OwnerId);
+
+            //TODO: add m:m 
+            modelBuilder.Entity<BoardDbo>()
+                        .HasMany(x => x.SharedUsers);
+
+            modelBuilder.Entity<BoardDbo>()
+                        .HasMany(x => x.Items)
+                        .WithOne(x => x.Board);
         }
     }
 }

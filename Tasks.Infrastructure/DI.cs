@@ -10,7 +10,7 @@ namespace Tasks.Infrastructure
     {
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddAssembly();
+            services.AddAssembly(configuration);
 
             services.AddScoped<IBoardService, BoardService>();
             services.AddScoped<IItemService, ItemService>();

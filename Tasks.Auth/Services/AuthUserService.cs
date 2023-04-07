@@ -1,5 +1,5 @@
-﻿using Tasks.App.CQRS.Commands.User.Login;
-using Tasks.App.CQRS.Commands.User.Logout;
+﻿using Tasks.App.CQRS.Commands.Users.Login;
+using Tasks.App.CQRS.Commands.Users.Logout;
 using Tasks.App.Services;
 
 namespace Tasks.Auth.Services

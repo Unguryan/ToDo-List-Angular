@@ -1,7 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Tasks.App.CQRS.Commands.User.Login;
-using Tasks.App.CQRS.Commands.User.Logout;
+using Tasks.App.CQRS.Commands.Auth.CreateAuthTelegramLink;
+using Tasks.App.CQRS.Commands.Users.Login;
+using Tasks.App.CQRS.Commands.Users.Logout;
 
 namespace Tasks.Angular.Controllers
 {
@@ -16,11 +17,11 @@ namespace Tasks.Angular.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("login/telegram")]
-        public async Task<LoginCommandResult> LoginTelegram([FromBody] LoginTelegramCommand form)
+        public async Task<CreateAuthTelegramLinkCommandResult> LoginTelegram()
         {
-            return await _mediator.Send(form);
+            return await _mediator.Send(new CreateAuthTelegramLinkCommand());
         }
 
         [HttpPost]
@@ -32,7 +33,7 @@ namespace Tasks.Angular.Controllers
 
         [HttpPost]
         [Route("logout")]
-        public async Task<LogoutCommandResult> LoginGitHub([FromBody] LogoutCommand form)
+        public async Task<LogoutCommandResult> Logout([FromBody] LogoutCommand form)
         {
             return await _mediator.Send(form);
         }

@@ -1,21 +1,43 @@
-﻿using Tasks.App.CQRS.Commands.Token.AddToken;
-using Tasks.App.CQRS.Commands.Token.RemoveToken;
-using Tasks.App.CQRS.Queries.Token.GetActiveUserToken;
-using Tasks.App.CQRS.Queries.Token.ReadToken;
+﻿using Tasks.App.CQRS.Commands.Tokens.AddToken;
+using Tasks.App.CQRS.Commands.Tokens.RemoveToken;
+using Tasks.App.CQRS.Queries.Tokens.GetActiveUserToken;
+using Tasks.App.CQRS.Queries.Tokens.ReadToken;
+using Tasks.App.Repositories;
 using Tasks.App.Services;
 
 namespace Tasks.Infrastructure.Services
 {
     public class JWTTokenService : IJWTTokenService
     {
-        public Task<AddTokenCommandResult> AddTokenAsync(AddTokenCommand request)
+        private readonly IJWTTokenGenerator _jWTTokenGenerator;
+
+        private readonly ITokenRepository _tokenRepository;
+
+        public JWTTokenService(IJWTTokenGenerator jWTTokenGenerator, ITokenRepository tokenRepository)
         {
-            throw new NotImplementedException();
+            _jWTTokenGenerator = jWTTokenGenerator;
+            _tokenRepository = tokenRepository;
         }
 
-        public Task<GetActiveUserTokenQueryResult> GetActiveUserTokenAsync(GetActiveUserTokenQuery query)
+        public async Task<AddTokenCommandResult> AddTokenAsync(AddTokenCommand request)
         {
-            throw new NotImplementedException();
+            var activeToken = await _tokenRepository.GetActiveTokenByUserId(request.User.Id);
+
+            if(activeToken != null)
+            {
+                await _tokenRepository.RemoveTokenAsync(activeToken.TokenData);
+            }
+
+            var tokenData = await _jWTTokenGenerator.GenerateTokenAsync(request.User);
+            var token = await _tokenRepository.AddTokenAsync(tokenData, request.User);
+
+            return new AddTokenCommandResult(token);
+        }
+
+        public async Task<GetActiveUserTokenQueryResult> GetActiveUserTokenAsync(GetActiveUserTokenQuery query)
+        {
+            var activeToken = await _tokenRepository.GetActiveTokenByUserId(query.UserId);
+            return new GetActiveUserTokenQueryResult(activeToken != null, activeToken);
         }
 
         public Task<ReadTokenQueryResult> ReadTokenAsync(ReadTokenQuery query)
@@ -23,9 +45,17 @@ namespace Tasks.Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<RemoveTokenCommandResult> RemoveTokenAsync(RemoveTokenCommand request)
+        public async Task<RemoveTokenCommandResult> RemoveTokenAsync(RemoveTokenCommand request)
         {
-            throw new NotImplementedException();
+            var activeToken = await _tokenRepository.GetActiveTokenByUserId(request.UserId);
+
+            if (activeToken != null && activeToken.TokenData.Equals(request.TokenData))
+            {
+                var res = await _tokenRepository.RemoveTokenAsync(request.TokenData);
+                return new RemoveTokenCommandResult(res != null, res);
+            }
+
+            return new RemoveTokenCommandResult(false, null);
         }
     }
 }

@@ -1,13 +1,13 @@
-﻿using Tasks.App.CQRS.Commands.Item.Change.AddSubItem;
-using Tasks.App.CQRS.Commands.Item.Change.ChangeItemAssignedTo;
-using Tasks.App.CQRS.Commands.Item.Change.ChangeItemDescription;
-using Tasks.App.CQRS.Commands.Item.Change.ChangeItemName;
-using Tasks.App.CQRS.Commands.Item.Change.ChangeItemParentItem;
-using Tasks.App.CQRS.Commands.Item.Change.ChangeItemState;
-using Tasks.App.CQRS.Commands.Item.Change.RemoveSubItem;
-using Tasks.App.CQRS.Commands.Item.CreateItem;
-using Tasks.App.CQRS.Commands.Item.RemoveItem;
-using Tasks.App.CQRS.Queries.Item.GetItem;
+﻿using Tasks.App.CQRS.Commands.Items.Change.AddSubItem;
+using Tasks.App.CQRS.Commands.Items.Change.ChangeItemAssignedTo;
+using Tasks.App.CQRS.Commands.Items.Change.ChangeItemDescription;
+using Tasks.App.CQRS.Commands.Items.Change.ChangeItemName;
+using Tasks.App.CQRS.Commands.Items.Change.ChangeItemParentItem;
+using Tasks.App.CQRS.Commands.Items.Change.ChangeItemState;
+using Tasks.App.CQRS.Commands.Items.Change.RemoveSubItem;
+using Tasks.App.CQRS.Commands.Items.CreateItem;
+using Tasks.App.CQRS.Commands.Items.RemoveItem;
+using Tasks.App.CQRS.Queries.Items.GetItem;
 
 namespace Tasks.App.Services
 {

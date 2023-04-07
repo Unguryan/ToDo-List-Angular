@@ -9,6 +9,8 @@ namespace Tasks.Auth
     {
         public static void AddAuth(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<IAuthLinkGenerator, AuthLinkGenerator>();
+            services.AddScoped<IAuthLinkService, AuthLinkService>();
             services.AddScoped<IAuthUserService, AuthUserService>();
         }
     }

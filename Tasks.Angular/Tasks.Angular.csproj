@@ -26,6 +26,7 @@
     <ProjectReference Include="..\Tasks.Auth\Tasks.Auth.csproj" />
     <ProjectReference Include="..\Tasks.EF_Core\Tasks.EF_Core.csproj" />
     <ProjectReference Include="..\Tasks.Infrastructure\Tasks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Tasks.Notifications\Tasks.Notifications.csproj" />
     <ProjectReference Include="..\Tasks.Telegram\Tasks.Telegram.csproj" />
   </ItemGroup>
 

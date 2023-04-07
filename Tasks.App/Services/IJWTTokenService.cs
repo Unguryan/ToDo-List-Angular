@@ -1,7 +1,7 @@
-﻿using Tasks.App.CQRS.Commands.Token.AddToken;
-using Tasks.App.CQRS.Commands.Token.RemoveToken;
-using Tasks.App.CQRS.Queries.Token.GetActiveUserToken;
-using Tasks.App.CQRS.Queries.Token.ReadToken;
+﻿using Tasks.App.CQRS.Commands.Tokens.AddToken;
+using Tasks.App.CQRS.Commands.Tokens.RemoveToken;
+using Tasks.App.CQRS.Queries.Tokens.GetActiveUserToken;
+using Tasks.App.CQRS.Queries.Tokens.ReadToken;
 
 namespace Tasks.App.Services
 {

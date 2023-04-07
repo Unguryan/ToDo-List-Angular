@@ -13,19 +13,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Integration", "04 Integr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Communication", "05 Communication", "{88DD18DF-D540-48C2-860F-E01E99FAFF3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Domain", "Tasks.Domain\Tasks.Domain.csproj", "{CEBE7A32-1273-4F92-8F2F-E87159788333}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Domain", "Tasks.Domain\Tasks.Domain.csproj", "{CEBE7A32-1273-4F92-8F2F-E87159788333}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.App", "Tasks.App\Tasks.App.csproj", "{DCBBCB87-9D06-4B3D-9C3F-594BE42ABF65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.App", "Tasks.App\Tasks.App.csproj", "{DCBBCB87-9D06-4B3D-9C3F-594BE42ABF65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Infrastructure", "Tasks.Infrastructure\Tasks.Infrastructure.csproj", "{4FB30248-6DC5-43EF-BD93-88B1A13A1064}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Infrastructure", "Tasks.Infrastructure\Tasks.Infrastructure.csproj", "{4FB30248-6DC5-43EF-BD93-88B1A13A1064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Angular", "Tasks.Angular\Tasks.Angular.csproj", "{B2133927-6A7F-403D-9C6B-3C72EF94F26F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Angular", "Tasks.Angular\Tasks.Angular.csproj", "{B2133927-6A7F-403D-9C6B-3C72EF94F26F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.EF_Core", "Tasks.EF_Core\Tasks.EF_Core.csproj", "{2DB13F37-7F84-4488-8C23-E3DA1D1002AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.EF_Core", "Tasks.EF_Core\Tasks.EF_Core.csproj", "{2DB13F37-7F84-4488-8C23-E3DA1D1002AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Auth", "Tasks.Auth\Tasks.Auth.csproj", "{F4694AC9-D64A-49DA-BC70-8626060B38B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Auth", "Tasks.Auth\Tasks.Auth.csproj", "{F4694AC9-D64A-49DA-BC70-8626060B38B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Telegram", "Tasks.Telegram\Tasks.Telegram.csproj", "{8DD29699-1772-4DDA-9A83-C6B4D9F81BB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Telegram", "Tasks.Telegram\Tasks.Telegram.csproj", "{8DD29699-1772-4DDA-9A83-C6B4D9F81BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Notifications", "Tasks.Notifications\Tasks.Notifications.csproj", "{5544E1EF-0754-4F9D-8DB5-B803E2360BB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{8DD29699-1772-4DDA-9A83-C6B4D9F81BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DD29699-1772-4DDA-9A83-C6B4D9F81BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DD29699-1772-4DDA-9A83-C6B4D9F81BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5544E1EF-0754-4F9D-8DB5-B803E2360BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5544E1EF-0754-4F9D-8DB5-B803E2360BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5544E1EF-0754-4F9D-8DB5-B803E2360BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5544E1EF-0754-4F9D-8DB5-B803E2360BB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{2DB13F37-7F84-4488-8C23-E3DA1D1002AF} = {413DEEAB-D3CF-45A5-AFCA-C74D564E31BA}
 		{F4694AC9-D64A-49DA-BC70-8626060B38B3} = {D01940D4-F095-4078-9AED-5EC479771C70}
 		{8DD29699-1772-4DDA-9A83-C6B4D9F81BB0} = {D01940D4-F095-4078-9AED-5EC479771C70}
+		{5544E1EF-0754-4F9D-8DB5-B803E2360BB9} = {D01940D4-F095-4078-9AED-5EC479771C70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB3146D6-4D5D-4D13-98EC-F8758E87A0E0}

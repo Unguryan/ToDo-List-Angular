@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Tasks.EF_Core.Dbo
 {
     public class BoardDbo
     {
+        [Key]
+        public int Id { get; set; }
+
+        public int Name { get; set; }
+
+        public int OwnerId { get; set; }
+
+        public UserDbo Owner { get; set; }
+
+        public List<UserDbo> SharedUsers { get; set; }
+
+        public List<ItemDbo> Items { get; set; }
     }
 }

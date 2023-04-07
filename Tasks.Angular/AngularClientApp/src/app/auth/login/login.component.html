@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center mt-3">
+    
+    <button pButton class="me-3 p-button-outlined p-button-success" [loading]="loadingTelegram" (click)="LoginByTelegram()" 
+        [disabled]="loadingGitHub">
+        <div class="d-inline-flex">
+            <span class="ms-1 me-1">By Telegram</span> 
+            <span class="pi pi-telegram" style="font-size: 1.5rem; color: #229ED9;"></span> 
+        </div>
+    </button>
+
+    <button pButton class="me-3 p-button-outlined p-button-success" [loading]="loadingGitHub" (click)="LoginByGitHub()"
+    [disabled]="loadingTelegram">
+        <div class="d-inline-flex">
+            <span class="ms-1 me-1">By GitHub</span> 
+            <span class="pi pi-github" style="font-size: 1.5rem; color: #333;"></span> 
+        </div>
+    </button>
+
+    <!-- <button  class="btn btn-outline-success" [loading]="loadingGitHub" (click)="LoginByGitHub()">
+        <div class="d-inline-flex">
+            <span class="me-1">By GitHub</span> 
+            <span class="pi pi-github" style="font-size: 1.5rem; color: #333;"></span> 
+        </div>
+    </button> -->
+</div>

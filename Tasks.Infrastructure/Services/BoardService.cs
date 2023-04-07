@@ -1,10 +1,10 @@
-﻿using Tasks.App.CQRS.Commands.Board.AddUserToBoard;
-using Tasks.App.CQRS.Commands.Board.ChangeBoardName;
-using Tasks.App.CQRS.Commands.Board.CreateBoard;
-using Tasks.App.CQRS.Commands.Board.RemoveBoard;
-using Tasks.App.CQRS.Commands.Board.RemoveUserFromBoard;
-using Tasks.App.CQRS.Queries.Board.GetUserBoardById;
-using Tasks.App.CQRS.Queries.Board.GetUserBoards;
+﻿using Tasks.App.CQRS.Commands.Boards.AddUserToBoard;
+using Tasks.App.CQRS.Commands.Boards.ChangeBoardName;
+using Tasks.App.CQRS.Commands.Boards.CreateBoard;
+using Tasks.App.CQRS.Commands.Boards.RemoveBoard;
+using Tasks.App.CQRS.Commands.Boards.RemoveUserFromBoard;
+using Tasks.App.CQRS.Queries.Boards.GetUserBoardById;
+using Tasks.App.CQRS.Queries.Boards.GetUserBoards;
 using Tasks.App.Services;
 
 namespace Tasks.Infrastructure.Services

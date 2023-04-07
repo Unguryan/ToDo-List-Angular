@@ -1,12 +1,18 @@
-﻿using Tasks.App.CQRS.Commands.User.AddUser;
-using Tasks.App.CQRS.Commands.User.RemoveUser;
-using Tasks.App.CQRS.Queries.User.GetUserById;
+﻿using Tasks.App.CQRS.Commands.Users.AddUser;
+using Tasks.App.CQRS.Commands.Users.IsGitHubUserExist;
+using Tasks.App.CQRS.Commands.Users.IsTelegramUserExist;
+using Tasks.App.CQRS.Commands.Users.RemoveUser;
+using Tasks.App.CQRS.Queries.Users.GetUserById;
 
 namespace Tasks.App.Services
 {
     public interface IUserService
     {
-        Task<GetUserByIdQueryResult> GetUserByIdQueryAsync(GetUserByIdQuery query);
+        Task<GetUserByIdQueryResult> GetUserByIdAsync(GetUserByIdQuery query);
+
+        Task<IsTelegramUserExistCommandResult> IsTelegramUserExistAsync(IsTelegramUserExistCommand command);
+
+        Task<IsGitHubUserExistCommandResult> IsGitHubUserExistAsync(IsGitHubUserExistCommand command);
 
         Task<AddUserCommandResult> AddUserAsync(AddUserCommand request);
 

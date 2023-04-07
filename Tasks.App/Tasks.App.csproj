@@ -18,7 +18,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+    <Folder Include="CQRS\Queries\Auth\" />
     <Folder Include="Validators\" />
   </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Tasks.Domain\Tasks.Domain.csproj" />
+	</ItemGroup>
 
 </Project>
