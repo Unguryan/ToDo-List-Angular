@@ -13,6 +13,12 @@ namespace Tasks.EF_Core.MapperProfiles
 
             CreateMap<TokenDbo, Token>()
                 .ReverseMap();
+
+            CreateMap<ItemDbo, ItemComposite>()
+                .ReverseMap();
+
+            CreateMap<BoardDbo, Board>()
+                .ReverseMap();
         }
     }
 }

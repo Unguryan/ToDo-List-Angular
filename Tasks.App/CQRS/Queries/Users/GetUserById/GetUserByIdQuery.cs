@@ -2,5 +2,5 @@ using MediatR;
 
 namespace Tasks.App.CQRS.Queries.Users.GetUserById
 {
-    public record GetUserByIdQuery() : IRequest<GetUserByIdQueryResult>;
+    public record GetUserByIdQuery(int userId) : IRequest<GetUserByIdQueryResult>;
 }

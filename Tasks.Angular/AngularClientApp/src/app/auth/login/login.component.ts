@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageBoxService } from 'src/app/message-box.service';
 import { SignalRService } from 'src/app/signal-r.service';
 import { AuthService } from '../auth.service';
 
@@ -13,9 +14,11 @@ export class LoginComponent implements OnInit{
   loginWindow: Window | null;
   loadingTelegram: boolean = false;
   loadingGitHub: boolean = false;
+  disabledButtons: boolean = false;
 
   constructor(private auth: AuthService,
               private signalR: SignalRService,
+              private messageBox: MessageBoxService,
               private router: Router) {
 
   }
@@ -33,9 +36,11 @@ export class LoginComponent implements OnInit{
             this.loginWindow = null;
           }
 
+          this.messageBox.NotifySuccess("Success. You`ll redirect in a second.")
+
           setTimeout(()=> {
             this.loadingTelegram = false;
-            this.router.navigate(['/guest'])
+            this.router.navigate(['/boards'])
             .then(() => {
               window.location.reload();
             });;

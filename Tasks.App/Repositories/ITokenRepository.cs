@@ -5,7 +5,8 @@ namespace Tasks.App.Repositories
     public interface ITokenRepository
     {
         Task<Token> AddTokenAsync(string tokenData, User user);
-        Task<Token?> GetActiveTokenByUserId(int id);
+        Task<Token?> GetActiveTokenByUserIdAsync(int id);
+        Task<Token?> GetTokenByTokenDataAsync(string tokenData);
         Task<Token?> RemoveTokenAsync(string tokenData);
     }
 }

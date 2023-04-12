@@ -1,4 +1,6 @@
-﻿namespace Tasks.App.CQRS.Commands.Boards.CreateBoard
+﻿using Tasks.Domain.Models;
+
+namespace Tasks.App.CQRS.Commands.Boards.CreateBoard
 {
-    public record CreateBoardCommandResult();
+    public record CreateBoardCommandResult(Board CreatedBoard);
 }

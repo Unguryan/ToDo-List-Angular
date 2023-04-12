@@ -13,6 +13,6 @@ namespace Tasks.EF_Core.Dbo
 
         public int UserId { get; set; }
 
-        public UserDbo User { get; set; }
+        public virtual UserDbo User { get; set; }
     }
 }

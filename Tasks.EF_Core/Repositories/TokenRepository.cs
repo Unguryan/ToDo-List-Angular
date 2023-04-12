@@ -20,7 +20,7 @@ namespace Tasks.EF_Core.Repositories
 
         public async Task<Token> AddTokenAsync(string tokenData, User user)
         {
-            var token = await GetActiveTokenByUserId(user.Id);
+            var token = await GetActiveTokenByUserIdAsync(user.Id);
 
             if(token != null && token.ExpiredAt < DateTime.Now)
             {
@@ -37,15 +37,10 @@ namespace Tasks.EF_Core.Repositories
             await _context.SaveChangesAsync();
 
             var resToken = _mapper.Map<Token>(addedToken.Entity);
-            if (resToken != null)
-            {
-                resToken.User = user;
-            }
-
             return resToken;
         }
 
-        public async Task<Token?> GetActiveTokenByUserId(int id)
+        public async Task<Token?> GetActiveTokenByUserIdAsync(int id)
         {
             var tokenDbo = await _context.Tokens.FirstOrDefaultAsync(t => t.UserId == id);
             var token = _mapper.Map<Token>(tokenDbo);
@@ -53,6 +48,12 @@ namespace Tasks.EF_Core.Repositories
             {
                 token.User = _mapper.Map<User>(tokenDbo?.User);
             }
+            return token;
+        }
+        public async Task<Token?> GetTokenByTokenDataAsync(string tokenData)
+        {
+            var tokenDbo = await _context.Tokens.FirstOrDefaultAsync(t => t.TokenData == tokenData);
+            var token = _mapper.Map<Token>(tokenDbo);
             return token;
         }
 
@@ -68,10 +69,6 @@ namespace Tasks.EF_Core.Repositories
             await _context.SaveChangesAsync();
 
             var token = _mapper.Map<Token>(res.Entity);
-            if (token != null)
-            {
-                token.User = _mapper.Map<User>(res.Entity?.User);
-            }
             return token;
         }
     }

@@ -1,0 +1,25 @@
+<p>board-list works!</p>
+
+<div class="d-flex justify-content-center mt-3">
+
+    <p-dropdown [options]="boards" [(ngModel)]="selectedBoard" placeholder="Select a Board" [group]="true">
+        <ng-template let-group pTemplate="group">
+            <div class="flex align-items-center">
+                <span>{{ group.label }}</span>
+            </div>
+        </ng-template>
+    </p-dropdown>
+
+    <div class="ms-2 mt-1">
+        <button pButton class="btn p-button-outlined p-button-success" (click)="SelectBoard()"
+        [disabled]="selectedBoard == undefined">
+            <span class="me-1">Select</span>
+            <i class="pi pi-check-circle"></i>
+        </button>
+
+        <button pButton class="btn p-button-outlined p-button-primary ms-2" routerLink="/board/create">
+            <span class="me-1">Create New</span>
+            <i class="pi pi-plus-circle"></i>
+        </button>
+    </div>
+</div>

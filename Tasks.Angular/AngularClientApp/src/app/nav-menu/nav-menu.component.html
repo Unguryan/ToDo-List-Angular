@@ -6,7 +6,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav">
-          <a class="nav-link" routerLink="/guest">Preview</a>
+          <div *ngIf="!user">
+            <a class="nav-link" routerLink="/faq">Preview</a>
+          </div>
+
+          <div *ngIf="user">
+            <a class="nav-link" routerLink="/boards">Boards</a>
+          </div>
         </div>
         
         <!-- <div class="navbar-nav">

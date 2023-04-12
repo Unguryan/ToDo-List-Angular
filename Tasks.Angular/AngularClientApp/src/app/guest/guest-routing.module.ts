@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GuestMainMenuComponent } from './guest-main-menu/guest-main-menu.component';
 
 const routes: Routes = [
-  {path: "guest", component: GuestMainMenuComponent}
+  {path: "faq", component: GuestMainMenuComponent}
 ];
 
 @NgModule({

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageBoxService } from 'src/app/message-box.service';
 import { AuthService } from '../auth.service';
 import { ParseJwtService } from '../parse-jwt.service';
 import { LogoutViewModel, TokenDataModel } from '../viewModels';
+
 
 @Component({
   selector: 'app-auth-nav-menu',
@@ -16,8 +18,8 @@ export class AuthNavMenuComponent {
 
   constructor(private parser: ParseJwtService,
               private auth: AuthService,
+              private messageBox: MessageBoxService,
               private router: Router) {
-
   }
 
   ngOnInit() {
@@ -36,15 +38,16 @@ export class AuthNavMenuComponent {
         if(resp.isSuccess){
           localStorage.removeItem('token');
 
+          if(showMessage){
+            this.messageBox.NotifySuccess("Success. You`ll logout in a second.")
+          }
+          
           setTimeout(() => {
             this.loading = false;
-            if (showMessage) {
-                alert("Success");
-                window.location.reload();
-            }
-            else {
+            this.router.navigate(['/login'])
+            .then(() => {
               window.location.reload();
-            }
+            });
           }, 3000);
 
         }

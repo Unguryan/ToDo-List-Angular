@@ -1,0 +1,27 @@
+<div *ngIf="selectedItem != null">
+    <div class="card"  style="height: 120px;" >
+        <div class="d-flex flex-column m-2" style="height: 110px;">
+            
+            <div class="d-flex">
+                <div class="me-auto">
+                    Task: {{selectedItem.name}}
+                </div>
+                <div class="hover-right">
+                    <i class="pi pi-arrow-circle-right" style="font-size: 1.5rem;"></i>
+                </div>
+            </div>
+           
+            <div class="d-flex">
+                <div class="me-auto text-start">
+                    Desc: {{selectedItem?.description ?? "None"}}
+                </div>
+            </div>
+
+            <div class="d-flex mt-auto">
+                <div class="">
+                    Assign: {{selectedItem.assignedTo?.name ?? "Not assigned"}}
+                </div>
+            </div>
+
+        </div>
+</div>

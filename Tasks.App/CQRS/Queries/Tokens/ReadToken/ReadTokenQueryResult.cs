@@ -1,4 +1,6 @@
-﻿namespace Tasks.App.CQRS.Queries.Tokens.ReadToken
+﻿using Tasks.Domain.Models;
+
+namespace Tasks.App.CQRS.Queries.Tokens.ReadToken
 {
-    public record ReadTokenQueryResult();
+    public record ReadTokenQueryResult(User? User);
 }

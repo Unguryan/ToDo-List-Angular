@@ -1,4 +1,11 @@
-﻿namespace Tasks.App.CQRS.Commands.Items.Change.RemoveSubItem
+﻿using Tasks.Domain.Models;
+
+namespace Tasks.App.CQRS.Commands.Items.Change.RemoveSubItem
 {
-    public record RemoveSubItemCommandResult();
+    public record RemoveSubItemCommandResult : BaseChangeItemCommandResult
+    {
+        public RemoveSubItemCommandResult(bool isChanged, ItemComposite? item) : base(isChanged, item)
+        {
+        }
+    }
 }

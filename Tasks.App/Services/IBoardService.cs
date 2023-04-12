@@ -23,5 +23,9 @@ namespace Tasks.App.Services
         Task<AddUserToBoardCommandResult> AddUserToBoardAsync(AddUserToBoardCommand request);
 
         Task<RemoveUserFromBoardCommandResult> RemoveUserFromBoardAsync(RemoveUserFromBoardCommand request);
+
+        Task<bool> IsUserInBoardAsync(int boardId, int userId);
+        Task<bool> IsUserOwnerBoardAsync(int boardId, int userId);
+        Task<bool> IsUserSharedAsync(int boardId, int userId);
     }
 }

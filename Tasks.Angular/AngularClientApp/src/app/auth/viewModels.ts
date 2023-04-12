@@ -28,3 +28,11 @@ export class TokenDataModel {
     public username: string;
     public expired: Date;
 }
+
+export class User {
+    public id: number;
+    public name: string;
+    public telegramId: string;
+    public gitHubUsername: string;
+    public username: string;
+}

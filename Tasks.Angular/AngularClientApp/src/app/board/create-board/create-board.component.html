@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center mt-4">
+
+    <form [formGroup]="formBoard" (ngSubmit)="onSubmit()">
+
+        <div class="flex flex-column gap-2">
+            <label class="form-text" htmlFor="boardName">Board name</label>
+            <input class="form-control" pInputText id="boardName" aria-describedby="boardNameInline"
+                formControlName="boardName" />
+
+            <div *ngIf="boardNameControl.touched && boardNameControl.invalid && boardNameControl.getError('required') != null"
+                id="boardNameInline" class="form-text text-danger">
+                <i class="pi pi-times me-1" style="font-size: 0.75rem"></i>
+                <span>Required</span>
+            </div>
+
+            <div *ngIf="boardNameControl.touched && boardNameControl.invalid && boardNameControl.getError('minlength') != null"
+                id="boardNameInline" class="form-text text-danger">
+                <i class="pi pi-times me-1" style="font-size: 0.75rem"></i>
+                <span>Min length is 4</span>
+            </div>
+
+        </div>
+
+        <div class="mt-2">
+            <button pButton class="me-3 p-button-outlined p-button-success" type="submit"
+            [disabled]="formBoard.invalid">
+                    <span class="ms-1 me-1">Create</span>
+                    <span class="pi pi-plus-circle"></span>
+            </button>
+        </div>
+
+    </form>
+</div>

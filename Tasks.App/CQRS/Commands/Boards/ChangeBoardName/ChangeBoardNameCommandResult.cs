@@ -1,4 +1,6 @@
-﻿namespace Tasks.App.CQRS.Commands.Boards.ChangeBoardName
+﻿using Tasks.Domain.Models;
+
+namespace Tasks.App.CQRS.Commands.Boards.ChangeBoardName
 {
-    public record ChangeBoardNameCommandResult();
+    public record ChangeBoardNameCommandResult(bool IsChanged, Board? Board);
 }

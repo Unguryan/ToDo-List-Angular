@@ -2,10 +2,10 @@
 {
     public enum ItemState
     {
-        ToDo = 1,
-        InProgress = 2,
-        Done = 3,
-        Rejected = 4,
-        OnHold = 5
+        OnHold = 1,
+        ToDo = 2,
+        InProgress = 3,
+        Done = 4,
+        Rejected = 5,
     }
 }

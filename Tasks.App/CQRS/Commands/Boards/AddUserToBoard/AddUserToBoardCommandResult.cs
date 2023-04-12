@@ -1,4 +1,6 @@
-﻿namespace Tasks.App.CQRS.Commands.Boards.AddUserToBoard
+﻿using Tasks.Domain.Models;
+
+namespace Tasks.App.CQRS.Commands.Boards.AddUserToBoard
 {
-    public record AddUserToBoardCommandResult();
+    public record AddUserToBoardCommandResult(bool IsAdded, Board? Board);
 }

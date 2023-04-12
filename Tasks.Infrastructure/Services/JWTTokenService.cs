@@ -21,7 +21,7 @@ namespace Tasks.Infrastructure.Services
 
         public async Task<AddTokenCommandResult> AddTokenAsync(AddTokenCommand request)
         {
-            var activeToken = await _tokenRepository.GetActiveTokenByUserId(request.User.Id);
+            var activeToken = await _tokenRepository.GetActiveTokenByUserIdAsync(request.User.Id);
 
             if(activeToken != null)
             {
@@ -36,18 +36,19 @@ namespace Tasks.Infrastructure.Services
 
         public async Task<GetActiveUserTokenQueryResult> GetActiveUserTokenAsync(GetActiveUserTokenQuery query)
         {
-            var activeToken = await _tokenRepository.GetActiveTokenByUserId(query.UserId);
+            var activeToken = await _tokenRepository.GetActiveTokenByUserIdAsync(query.UserId);
             return new GetActiveUserTokenQueryResult(activeToken != null, activeToken);
         }
 
-        public Task<ReadTokenQueryResult> ReadTokenAsync(ReadTokenQuery query)
+        public async Task<ReadTokenQueryResult> ReadTokenAsync(ReadTokenQuery query)
         {
-            throw new NotImplementedException();
+            var token = await _tokenRepository.GetTokenByTokenDataAsync(query.TokenData);
+            return new ReadTokenQueryResult(token?.User);
         }
 
         public async Task<RemoveTokenCommandResult> RemoveTokenAsync(RemoveTokenCommand request)
         {
-            var activeToken = await _tokenRepository.GetActiveTokenByUserId(request.UserId);
+            var activeToken = await _tokenRepository.GetActiveTokenByUserIdAsync(request.UserId);
 
             if (activeToken != null && activeToken.TokenData.Equals(request.TokenData))
             {

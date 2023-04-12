@@ -1,0 +1,18 @@
+div.hover-right:hover {
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+div.hover-right {
+    transition: all 0.3s ease;
+  } 
+
+/* div.hover-right:after {
+    @include fa('\f178');
+    margin-left: 10px;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+div.hover-right:hover::after {
+    transform: translateX(5px);
+  } */

@@ -5,6 +5,8 @@ using Tasks.Domain.Options;
 using Tasks.Telegram.Services.Interfaces;
 using Tasks.Telegram.Services;
 using Telegram.Bot;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Newtonsoft.Json;
 
 namespace Tasks.Auth
 {
@@ -25,7 +27,11 @@ namespace Tasks.Auth
 
             services.AddHostedService<ConfigureWebhook>();
 
-            services.AddControllersWithViews().AddNewtonsoftJson();
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Serialize;
+                options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
+            });
         }
     }
 }

@@ -5,8 +5,9 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthNavMenuComponent } from './auth-nav-menu/auth-nav-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ButtonModule } from 'primeng/button';
 import { LoginComponent } from './login/login.component';
+
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [

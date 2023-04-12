@@ -1,4 +1,6 @@
-﻿namespace Tasks.App.CQRS.Queries.Boards.GetUserBoards
+﻿using Tasks.Domain.Models;
+
+namespace Tasks.App.CQRS.Queries.Boards.GetUserBoards
 {
-    public record GetUserBoardsQueryResult();
+    public record GetUserBoardsQueryResult(List<Board>? Boards);
 }
